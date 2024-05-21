@@ -1,0 +1,6 @@
+{
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "intelephense.format.braces": "allman"
+}

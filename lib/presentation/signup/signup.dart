@@ -1,7 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, duplicate_ignore, avoid_print
-
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:ngcom/presentation/login/login.dart';
 import 'package:http/http.dart' as http;
@@ -455,7 +451,7 @@ class _SignupFormState extends State<SignupForm> {
                                 MaterialStatePropertyAll(Colors.deepOrange)),
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
-                            _Registered();
+                            _registered();
                             showDialog(
                               context: context,
                               builder: (BuildContext context) {
@@ -489,19 +485,20 @@ class _SignupFormState extends State<SignupForm> {
     );
   }
 
-  Future _Registered() async {
-    // ignore: non_constant_identifier_names
-    var APIURL = "http://localhost/8000/phpfolder/signup.php";
-
+  
+  Future<void> _registered() async {
+    var api = 'http://localhost/ngcom/public/sign';
     Map mydata = {
       "name": _fullNameController.text,
       "email": _emailController.text,
-      "id": _idNoController.text,
+      "company_id": _idNoController.text,
       "password": _passwordController.text,
     };
-    print(mydata);
-    http.Response response = await http.post(Uri.https(APIURL), body: mydata);
-    var data = jsonDecode(response.body);
-    print(data);
+    
+    http.Response response = await http.post(api as Uri, body: mydata);
+   
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    
   }
 }

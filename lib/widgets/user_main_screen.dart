@@ -1,9 +1,11 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 import 'package:ngcom/widgets/user_survey.dart';
 import 'package:ngcom/widgets/user_tickets.dart';
 import 'package:weather/weather.dart';
 
-WeatherFactory wf = new WeatherFactory("698f9404da815fe071e2614f7c22474a");
+WeatherFactory wf = WeatherFactory("698f9404da815fe071e2614f7c22474a");
 
 class UserMainScreen extends StatelessWidget {
   const UserMainScreen({super.key});
@@ -140,7 +142,7 @@ class UserMainScreen extends StatelessWidget {
                               Container(
                                 height: 60,
                                 width: 60,
-                                margin: EdgeInsets.only(top:15),
+                                margin: const EdgeInsets.only(top:15),
                                 decoration: BoxDecoration(
                                     border: Border.all(
                                         width: 1.5,
@@ -158,7 +160,7 @@ class UserMainScreen extends StatelessWidget {
                         ),
                         Container(
                           height: 70,
-                          margin: EdgeInsets.only(top: 20),
+                          margin: const EdgeInsets.only(top: 20),
                           alignment: Alignment.center,
                           width: double.infinity,
                           child: const Text(

@@ -28,6 +28,7 @@ class _EditProfileState extends State<EditProfile> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: ListView.builder(
@@ -35,6 +36,7 @@ class _EditProfileState extends State<EditProfile> {
       itemBuilder: (context, index) {
         final countryData = countries[index];
         final countryName = countryData["name"]['common'];
+        // ignore: unused_local_variable
         final countryFlag = countryData['flag'];
         return Column(
           children: [
@@ -43,7 +45,7 @@ class _EditProfileState extends State<EditProfile> {
               children: [
                 Text(
                   countryName,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 20,
                   ),

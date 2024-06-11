@@ -1,13 +1,31 @@
-// ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import '../presentation/signup/signup.dart';
 import 'package:ngcom/presentation/home/home.dart';
 
-class successfully extends StatelessWidget {
+class Successful extends StatefulWidget {
   final String message;
+  final String title;
+  const Successful({Key? key, required this.message, required this.title}) : super(key: key);
 
-  const successfully({Key? key, required this.message}) : super(key: key);
+  @override
+  State<Successful> createState() => _SuccessfulState();
+}
 
+class _SuccessfulState extends State<Successful> {
+  @override
+  void initState() {
+    super.initState();
+     Future.delayed(
+      const Duration(milliseconds: 4000),
+      () {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => HomePage()), // Removed 'const' here
+        );
+      },
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -43,8 +61,8 @@ class successfully extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const SizedBox(height: 20),
-              const Text(
-                'Welcome back!',
+               Text(
+                widget.title,
                 style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w600,
@@ -52,36 +70,15 @@ class successfully extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               Text(
-                message,
-                style: const TextStyle(fontSize: 16, color: Colors.black),
+                widget.message,
+                style: const TextStyle(fontSize: 13, color: Colors.black),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16),
-              Align(
-                alignment: Alignment.bottomRight,
-                child: TextButton(
-                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()) ),
-                  
-                  child: const Text('OK',style: TextStyle(color: Colors.deepOrange),),
-                ),
-              ),
+              
             ],
           ),
         ),
-        const Positioned(
-          top: 0,
-          left: 0,
-          right: 0,
-          child: CircleAvatar(
-            backgroundColor: Colors.deepOrange,
-            radius: 50,
-            child: Icon(
-              Icons.check,
-              color: Colors.white,
-              size: 50,
-            ),
-          ),
-        ),
+         
       ],
     );
   }

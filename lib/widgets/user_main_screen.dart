@@ -4,14 +4,20 @@ import 'package:flutter/material.dart';
 import 'package:ngcom/widgets/user_survey.dart';
 import 'package:ngcom/widgets/user_tickets.dart';
 import 'package:weather/weather.dart';
+import 'package:provider/provider.dart';
+import 'package:ngcom/widgets/usermodel.dart';
+import 'package:ngcom/widgets/user_provider.dart';
 
-WeatherFactory wf = WeatherFactory("698f9404da815fe071e2614f7c22474a");
+// WeatherFactory wf = WeatherFactory("698f9404da815fe071e2614f7c22474a");
 
 class UserMainScreen extends StatelessWidget {
-  const UserMainScreen({super.key});
+  
+  const UserMainScreen({super.key,});
 
   @override
   Widget build(BuildContext context) {
+
+    final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SafeArea(
         left: true,
@@ -43,19 +49,19 @@ class UserMainScreen extends StatelessWidget {
                           Container(
                             height: 30,
                             width: 200,
-                            child: const Text(
-                              "Adebayo David",
+                            child:  Text(
+                              '${userProvider.user?.fulname}',
                               style: TextStyle(
                                   color: Colors.black,
                                   fontSize: 20,
-                                  fontWeight: FontWeight.w400),
+                                  ),
                             ),
                           ),
                           Container(
                             height: 30,
                             width: 200,
-                            child: const Text(
-                              "Field Engineer",
+                            child:  Text(
+                              '${userProvider.user?.email}',
                               style: TextStyle(
                                   color: Colors.grey,
                                   fontSize: 17,
@@ -64,19 +70,19 @@ class UserMainScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      Container(
-                        height: 60,
-                        width: 100,
-                        child: const Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Icon(Icons.alarm,
-                                color: Colors.deepOrange, size: 35),
-                            Icon(Icons.alarm_add_sharp,
-                                color: Colors.deepOrange, size: 35)
-                          ],
-                        ),
-                      )
+                      // Container(
+                      //   height: 60,
+                      //   width: 100,
+                      //   child: const Row(
+                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //     children: [
+                      //       Icon(Icons.alarm,
+                      //           color: Colors.deepOrange, size: 35),
+                      //       Icon(Icons.alarm_add_sharp,
+                      //           color: Colors.deepOrange, size: 35)
+                      //     ],
+                      //   ),
+                      // )
                     ],
                   )
                 ],

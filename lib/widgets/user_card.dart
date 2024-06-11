@@ -113,8 +113,8 @@ class UserCard extends  StatelessWidget {
                   Container(
                     width: 60,
                     height: 60,
-                    padding: const EdgeInsets.all(4),
-                   alignment: Alignment.center,
+                   // padding: const EdgeInsets.all(4),
+                    alignment: Alignment.center,
                     margin: const EdgeInsets.only(right: 10),
                     decoration: const BoxDecoration( 
                       borderRadius: BorderRadius.all(Radius.circular(60)),   
@@ -127,8 +127,8 @@ class UserCard extends  StatelessWidget {
                           lineWidth:6.5 ,
                           circularStrokeCap: CircularStrokeCap.round,
                           center: Text(workprogress,style: const TextStyle(fontSize: 17,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w800),),
+                          color: Colors.black,
+                          fontWeight: FontWeight.w800),),
                       )
                   ),
               

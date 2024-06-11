@@ -2,6 +2,11 @@ import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:ngcom/presentation/screenlauncher/screenluancher.dart';
 import 'package:ngcom/widgets/nortification_controller.dart';
+import 'package:ngcom/responsive/responsive_layout.dart';
+import 'package:ngcom/responsive/mobileLayout.dart';
+import 'package:ngcom/responsive/desktopLayout.dart';
+import 'package:ngcom/widgets/user_provider.dart';
+import 'package:provider/provider.dart';
 
 
 
@@ -34,7 +39,7 @@ bool isAllowedToSendNortificatiion = await AwesomeNotifications().isNotification
 }
 
 class MyApp extends  StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -60,18 +65,42 @@ class _MyAppState extends State<MyApp> {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      
-      debugShowCheckedModeBanner: false,
+
+
+
+return ChangeNotifierProvider(
+      create: (context) => UserProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
       title: 'NGcom',
       theme: ThemeData(
-        
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
         useMaterial3: true,
       ),
-      // ignore: prefer_const_constructors
-      home: Luancher1(),
+        home: ResponsiveLayout(
+        mobileBody: MobileLayout(),
+        desktopBody: DesktopLayout(),
+      ),
+        
+        // Consumer<UserProvider>(
+        //   builder: (context, userProvider, child) {
+        //     return userProvider.isLoggedIn ? HomePage  : LoginPage();
+        //   },
+        // ),
+      ),
     );
+
+
+
+
+
+
+    // return MaterialApp(
+      
+      
+    //   // ignore: prefer_const_constructors
+      // home: 
+    // );
   }
 }
 

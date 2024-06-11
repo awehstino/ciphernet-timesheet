@@ -2,14 +2,18 @@
 
 import 'package:flutter/material.dart';
 import 'package:toggle_switch/toggle_switch.dart';
-
 import '../../widgets/editprofile.dart';
+import 'package:provider/provider.dart';
+import 'package:ngcom/widgets/usermodel.dart';
+import 'package:ngcom/widgets/user_provider.dart';
 
 class Profile   extends StatelessWidget {
   const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Column(
         children: [
@@ -51,18 +55,17 @@ class Profile   extends StatelessWidget {
                     Container(
                       height: 25,
                       width: double.maxFinite,
-                      child: const Text("Adebayo David",style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.w700,
+                      child:  Text('${userProvider.user?.fulname}',style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
                         color: Colors.black,
                       ),),
                     ),
                     Container(
                       height: 30,
                       width: double.maxFinite,
-                      child: const Text("Field Engineer",style: TextStyle(
+                      child:  Text('${userProvider.user?.email}',style: TextStyle(
                         fontSize: 17,
-                        fontWeight: FontWeight.w700,
                         color: Colors.grey,
                       ),),
                     ),

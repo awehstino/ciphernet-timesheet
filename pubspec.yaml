@@ -41,13 +41,13 @@ dependencies:
   awesome_notifications: any
   weather: ^3.1.1
   http: ^1.1.0
-  geolocator: ^11.0.0
+  geolocator: ^12.0.0
   geocoding: ^3.0.0
-  lottie: ^2.6.0
+  lottie: ^3.1.2
   intl: ^0.19.0
   material_design_icons_flutter: ^7.0.7296
   flutter_local_notifications: ^17.1.2
-  flutter_typeahead: ^4.8.0
+  flutter_typeahead: ^5.2.0
   provider: ^6.0.3
   
 
@@ -60,7 +60,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.1
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

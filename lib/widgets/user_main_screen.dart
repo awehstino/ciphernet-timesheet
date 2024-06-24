@@ -11,20 +11,21 @@ import 'package:ngcom/widgets/user_provider.dart';
 // WeatherFactory wf = WeatherFactory("698f9404da815fe071e2614f7c22474a");
 
 class UserMainScreen extends StatelessWidget {
-  
-  const UserMainScreen({super.key,});
+  const UserMainScreen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-
     final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
+      backgroundColor: Color.fromARGB(251, 234, 238, 255),
       body: SafeArea(
         left: true,
         top: true,
         right: true,
         bottom: true,
-        minimum: const EdgeInsets.only(top:20 ),
+        minimum: const EdgeInsets.only(top: 20),
         maintainBottomViewPadding: false,
         child: Column(
           children: [
@@ -49,18 +50,18 @@ class UserMainScreen extends StatelessWidget {
                           Container(
                             height: 30,
                             width: 200,
-                            child:  Text(
+                            child: Text(
                               '${userProvider.user?.fulname}',
                               style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 20,
-                                  ),
+                                color: Colors.black,
+                                fontSize: 20,
+                              ),
                             ),
                           ),
                           Container(
                             height: 30,
                             width: 200,
-                            child:  Text(
+                            child: Text(
                               '${userProvider.user?.email}',
                               style: TextStyle(
                                   color: Colors.grey,
@@ -70,19 +71,19 @@ class UserMainScreen extends StatelessWidget {
                           )
                         ],
                       ),
-                      // Container(
-                      //   height: 60,
-                      //   width: 100,
-                      //   child: const Row(
-                      //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //     children: [
-                      //       Icon(Icons.alarm,
-                      //           color: Colors.deepOrange, size: 35),
-                      //       Icon(Icons.alarm_add_sharp,
-                      //           color: Colors.deepOrange, size: 35)
-                      //     ],
-                      //   ),
-                      // )
+                      Container(
+                        height: 60,
+                        width: 100,
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Icon(Icons.alarm,
+                                color: Colors.deepOrange, size: 30),
+                            Icon(Icons.alarm_add_sharp,
+                                color: Colors.deepOrange, size: 30)
+                          ],
+                        ),
+                      )
                     ],
                   )
                 ],
@@ -98,20 +99,22 @@ class UserMainScreen extends StatelessWidget {
             SafeArea(
               left: true,
               right: true,
-              minimum: const EdgeInsets.only(left: 18, right: 18),
+              minimum: const EdgeInsets.only(left: 8.0, right: 8.0),
               child: Container(
                 width: double.infinity,
-                height: 716,
+                height: MediaQuery.sizeOf(context).height / 1.3,
                 child: ListView(
                   scrollDirection: Axis.vertical,
                   children: [
                     const SizedBox(
                       height: 40,
                     ),
-                    Container(
-                      width: double.infinity,
-                      height: 180,
-                      decoration: const BoxDecoration(
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 180,
+                        decoration: const BoxDecoration(
                           gradient: LinearGradient(
                               begin: Alignment.topLeft,
                               colors: [
@@ -121,141 +124,151 @@ class UserMainScreen extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(20)),
                           boxShadow: [
                             BoxShadow(
-                                color: Colors.grey,
-                                spreadRadius: 3,
-                                offset: Offset(1, 4),
-                                blurRadius: 5)
-                          ]),
-                      child: Column(children: [
-                        Container(
-                          height: 70,
-                          width: double.infinity,
-                          margin: const EdgeInsets.only(left: 20, right: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                height: 40,
-                                width: 200,
-                                child: const Text(
-                                  "Total Job Orders",
-                                  style: TextStyle(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.w500,
-                                      color: Colors.black),
-                                ),
-                              ),
-                              Container(
-                                height: 60,
-                                width: 60,
-                                margin: const EdgeInsets.only(top:15),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        width: 1.5,
-                                        color: Colors.deepOrange,
-                                        style: BorderStyle.solid),
-                                    borderRadius:
-                                        const BorderRadius.all(Radius.circular(10))),
-                                child: const Icon(
-                                  Icons.format_list_bulleted_add,size: 30,
-                                  color: Colors.deepOrange,
-                                ),
-                              )
-                            ],
-                          ),
+                              color: Colors.grey,
+                              spreadRadius: 2,
+                              blurRadius: 7,
+                              offset: Offset(1, 1),
+                            ),
+                          ],
                         ),
-                        Container(
-                          height: 70,
-                          margin: const EdgeInsets.only(top: 20),
-                          alignment: Alignment.center,
-                          width: double.infinity,
-                          child: const Text(
-                            "150",
-                            style: TextStyle(
-                              fontSize: 50,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.black,
+                        child: Column(children: [
+                          Container(
+                            height: 70,
+                            width: double.infinity,
+                            margin: const EdgeInsets.only(left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  height: 40,
+                                  width: 200,
+                                  child: const Text(
+                                    "Total Job Orders",
+                                    style: TextStyle(
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.black),
+                                  ),
+                                ),
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  margin: const EdgeInsets.only(top: 15),
+                                  decoration: BoxDecoration(
+                                      border: Border.all(
+                                          width: 1.5,
+                                          color: Colors.deepOrange,
+                                          style: BorderStyle.solid),
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(10))),
+                                  child: const Icon(
+                                    Icons.format_list_bulleted_add,
+                                    size: 30,
+                                    color: Colors.deepOrange,
+                                  ),
+                                )
+                              ],
                             ),
                           ),
-                        )
-                      ]),
+                          Container(
+                            height: 70,
+                            margin: const EdgeInsets.only(top: 20),
+                            alignment: Alignment.center,
+                            width: double.infinity,
+                            child: const Text(
+                              "150",
+                              style: TextStyle(
+                                fontSize: 50,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.black,
+                              ),
+                            ),
+                          )
+                        ]),
+                      ),
                     ),
                     const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 180,
-                          height: 100,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 3,
-                                    offset: Offset(1, 4),
-                                    blurRadius: 6)
-                              ]),
-                          child: const Column(
-                            children: [],
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 180,
+                            height: 100,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 3,
+                                      offset: Offset(1, 4),
+                                      blurRadius: 6)
+                                ]),
+                            child: const Column(
+                              children: [],
+                            ),
                           ),
-                        ),
-                        Container(
-                          width: 180,
-                          height: 100,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 3,
-                                    offset: Offset(1, 4),
-                                    blurRadius: 6)
-                              ]),
-                        )
-                      ],
+                          Container(
+                            width: 180,
+                            height: 100,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 3,
+                                      offset: Offset(1, 4),
+                                      blurRadius: 6)
+                                ]),
+                          )
+                        ],
+                      ),
                     ),
                     const SizedBox(
-                      height: 18,
+                      height: 10,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 180,
-                          height: 100,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 3,
-                                    offset: Offset(1, 4),
-                                    blurRadius: 6)
-                              ]),
-                        ),
-                        Container(
-                          width: 180,
-                          height: 100,
-                          decoration: const BoxDecoration(
-                              color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.grey,
-                                    spreadRadius: 3,
-                                    offset: Offset(1, 4),
-                                    blurRadius: 6)
-                              ]),
-                        )
-                      ],
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            width: 180,
+                            height: 100,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 3,
+                                      offset: Offset(1, 4),
+                                      blurRadius: 6)
+                                ]),
+                          ),
+                          Container(
+                            width: 180,
+                            height: 100,
+                            decoration: const BoxDecoration(
+                                color: Colors.white,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      spreadRadius: 3,
+                                      offset: Offset(1, 4),
+                                      blurRadius: 6)
+                                ]),
+                          )
+                        ],
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
@@ -285,7 +298,10 @@ class UserMainScreen extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    const UserSurvey(),
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: const UserSurvey(),
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -312,7 +328,10 @@ class UserMainScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const UserTickets()
+                    Padding(
+                      padding: EdgeInsets.all(6.0),
+                      child: const UserTickets(),
+                    ),
                   ],
                 ),
               ),

@@ -1,9 +1,9 @@
 class WeatherModel {
   final String cityName;
-  final String temperature;
+  final double temperature;
   final String mainCondition;
 
-  const WeatherModel({
+  WeatherModel({
     required this.cityName,
     required this.temperature,
     required this.mainCondition,
@@ -12,7 +12,7 @@ class WeatherModel {
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     return WeatherModel(
       cityName: json['name'],
-      temperature: json['main']['temp'].toDuble(),
+      temperature: json['main']['temp'],
       mainCondition: json['weather'][0]['main'],
     );
   }

@@ -3,20 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
-class InstallationCard extends  StatelessWidget {
-  const InstallationCard({super.key,
-      
-      required this.title,
-      required this.transfarclient,
-      required this.place,
-      required this.date,
-      required this.progesscolor,
-      required this.progessbackgroundcolor,
-      required this.progesspercent,
-      required this.workprogress, 
-    
-
-      
+class InstallationCard extends StatelessWidget {
+  const InstallationCard({
+    super.key,
+    required this.title,
+    required this.transfarclient,
+    required this.place,
+    required this.date,
+    required this.progesscolor,
+    required this.progessbackgroundcolor,
+    required this.progesspercent,
+    required this.workprogress,
   });
   final String title;
   final String transfarclient;
@@ -26,118 +23,128 @@ class InstallationCard extends  StatelessWidget {
   final Color progessbackgroundcolor;
   final double progesspercent;
   final String workprogress;
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Container(
-          margin: const EdgeInsets.only(left: 20,right: 20),
-          width: 400,
-          height: 180,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(30)),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 3,
-                blurRadius: 5,
-                offset: Offset(3, 3),
-                ) ,
-            ]
-          ),
-          child: Column(
-           
-            children: [
-              Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-               children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 57,
-                  width: 140,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 4, 150, 89),
-                    borderRadius: BorderRadius.only(topLeft: 
-                    Radius.circular(25), bottomRight: Radius.circular(50))
+        Padding(
+          padding: EdgeInsets.all(7.0),
+          child: Container(
+            width: double.infinity,
+            height: 180,
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(Radius.circular(30)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey,
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: Offset(1, 1),
                   ),
-                  child:  Text(title, style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w400,
-                  ),),
+                ]),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      height: 57,
+                      width: 140,
+                      decoration: const BoxDecoration(
+                          color: Color.fromARGB(255, 4, 150, 89),
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(25),
+                              bottomRight: Radius.circular(50))),
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      height: 45,
+                      margin: const EdgeInsets.only(right: 10, top: 15),
+                      child: Text(
+                        date,
+                        style: const TextStyle(
+                            color: Color.fromARGB(255, 116, 115, 115),
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700),
+                      ),
+                    ),
+                  ],
                 ),
-                Container(
-                  height: 45,
-                  margin: const EdgeInsets.only(right: 10,top: 15),
-                  child:  Text(date,style: const TextStyle(
-                    color: Color.fromARGB(255, 116, 115, 115),
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700
-                  ),),
-                ),
-               ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 15,top: 30),
-                    height: 80,
-                    width: 250,
-                    child: Column(children: [
-                            Container(
-                              height: 30,
-                              width: double.maxFinite,
-                              child:  Text(transfarclient,style: const TextStyle(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.only(left: 15, top: 30),
+                      height: 80,
+                      width: 250,
+                      child: Column(children: [
+                        Container(
+                          height: 30,
+                          width: double.maxFinite,
+                          child: Text(
+                            transfarclient,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w700,
-                            ),),
                             ),
-
-                           Container(
-                            height: 35,
-                            width: double.maxFinite,
-                            child:   Text(place,style: const TextStyle(
+                          ),
+                        ),
+                        Container(
+                          height: 35,
+                          width: double.maxFinite,
+                          child: Text(
+                            place,
+                            style: const TextStyle(
                               color: Colors.black,
                               fontSize: 15,
                               fontWeight: FontWeight.w600,
-                            ),),
-                           ),
-
-                    ]),
-                  ),
-
-                  Container(
-                    width: 60,
-                    height: 60,
-                    padding: const EdgeInsets.all(4),
-                   alignment: Alignment.center,
-                    margin: const EdgeInsets.only(right: 10),
-                    decoration: const BoxDecoration( 
-                      borderRadius: BorderRadius.all(Radius.circular(60)),   
-                      ),
-                      child:  CircularPercentIndicator(
-                          radius: 50,
-                          progressColor:progesscolor ,
+                            ),
+                          ),
+                        ),
+                      ]),
+                    ),
+                    Container(
+                        width: 60,
+                        height: 60,
+                        padding: const EdgeInsets.all(4),
+                        alignment: Alignment.center,
+                        margin: const EdgeInsets.only(right: 10),
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(60)),
+                        ),
+                        child: CircularPercentIndicator(
+                          radius: 25,
+                          progressColor: progesscolor,
                           backgroundColor: progessbackgroundcolor,
                           percent: progesspercent,
-                          lineWidth:6.5 ,
+                          lineWidth: 6.5,
                           circularStrokeCap: CircularStrokeCap.round,
-                          center: Text(workprogress,style: const TextStyle(fontSize: 17,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w800),),
-                      )
-                  ),
-              
-                ],
-              ),
-            ],
+                          center: Text(
+                            workprogress,
+                            style: const TextStyle(
+                                fontSize: 17,
+                                color: Colors.black,
+                                fontWeight: FontWeight.w800),
+                          ),
+                        )),
+                  ],
+                ),
+              ],
+            ),
           ),
-         )
+        )
       ],
-    ) ;
+    );
   }
 }

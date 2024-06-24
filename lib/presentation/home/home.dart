@@ -20,9 +20,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Colors.transparent,
-        buttonBackgroundColor: Colors.deepOrange,
-        color: Colors.deepOrange,
+        
+        backgroundColor: Color.fromARGB(251, 234, 238, 255),
+        buttonBackgroundColor: const Color.fromARGB(255, 0, 65, 117),
+        color: Color.fromARGB(255, 0, 65, 117),
         animationDuration: const Duration(milliseconds: 300),
         items: const <Widget>[
           Icon(
@@ -60,8 +61,9 @@ class _HomePageState extends State<HomePage> {
       body: _pages[_selectindex],
     );
   }
+  
 
-  final List<Widget> _pages = [
+  final List<Widget> _pages =[
     const UserMainScreen(),
     const Survey(),
     const Installation(),

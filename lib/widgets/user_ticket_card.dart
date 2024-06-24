@@ -36,9 +36,9 @@ class UserTicketCard extends  StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
-                spreadRadius: 3,
-                blurRadius: 5,
-                offset: Offset(3, 3),
+                spreadRadius: 2,
+                blurRadius: 7,
+                offset: Offset(1, 1),
                 ) ,
             ]
           ),

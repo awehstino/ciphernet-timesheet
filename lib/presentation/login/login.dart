@@ -34,7 +34,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepOrange,
+      backgroundColor: Color.fromARGB(255, 0, 66, 121),
       body: ListView(scrollDirection: Axis.vertical, children: <Widget>[
         const SizedBox(
           height: 40,
@@ -82,7 +82,7 @@ class _LoginFormState extends State<LoginForm> {
                   child: Container(
                     height: 50,
                     decoration: const BoxDecoration(
-                        color: Colors.deepOrange,
+                        color: Color.fromARGB(255, 0, 66, 121),
                         borderRadius: BorderRadius.all(Radius.circular(50))),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,12 +144,13 @@ class _LoginFormState extends State<LoginForm> {
         Container(
          height: MediaQuery.of(context).size.height,
           decoration: const BoxDecoration(
-              color: Colors.white,
+           
+              color: Color.fromARGB(251, 234, 238, 255),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25))),
           child: Column(children: [
             const SizedBox(
-              height: 14,
+              height: 40,
             ),
             Container(
               margin: const EdgeInsets.only(left: 20, right: 20, bottom: 6),
@@ -203,7 +204,7 @@ class _LoginFormState extends State<LoginForm> {
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               width: 3,
-                              color: Colors.deepOrange,
+                              color: Color.fromARGB(255, 0, 66, 121),
                               style: BorderStyle.solid,
                             ),
                             borderRadius: BorderRadius.all(
@@ -261,7 +262,7 @@ class _LoginFormState extends State<LoginForm> {
                             focusedBorder: const OutlineInputBorder(
                               borderSide: BorderSide(
                                 width: 3,
-                                color: Colors.deepOrange,
+                                color: Color.fromARGB(255, 0, 66, 121),
                                 style: BorderStyle.solid,
                               ),
                               borderRadius: BorderRadius.all(
@@ -284,7 +285,7 @@ class _LoginFormState extends State<LoginForm> {
                               fontWeight: FontWeight.w400,
                             ),
                             suffixIcon: IconButton(
-                              focusColor: Colors.deepOrange,
+                              focusColor: Color.fromARGB(255, 0, 66, 121),
                               icon: Icon(
                                 size: 30,
                                 _obscureText
@@ -321,10 +322,11 @@ class _LoginFormState extends State<LoginForm> {
                                   Transform.scale(
                                     scale: 1.3,
                                     child: Checkbox(
-                                        activeColor: Colors.deepOrange,
+                                        activeColor: Color.fromARGB(255, 0, 66, 121),
                                         side: const BorderSide(
                                             width: 1.7,
-                                            color: Colors.deepOrange,
+                                            color:
+                                                Color.fromARGB(255, 0, 66, 121),
                                             style: BorderStyle.solid),
                                         value: _isChecked,
                                         onChanged: (newValue) {
@@ -350,7 +352,7 @@ class _LoginFormState extends State<LoginForm> {
                                 style: TextStyle(
                                   fontSize: 17,
                                   fontWeight: FontWeight.w600,
-                                  color: Colors.deepOrange,
+                                  color: Color.fromARGB(255, 0, 66, 121),
                                 ),
                               ),
                             ]),
@@ -369,7 +371,8 @@ class _LoginFormState extends State<LoginForm> {
                       child: ElevatedButton(
                         style: const ButtonStyle(
                             backgroundColor:
-                                MaterialStatePropertyAll(Colors.deepOrange)),
+                                MaterialStatePropertyAll(
+                                Color.fromARGB(255, 0, 66, 121))),
                         onPressed: () {
                           if (_formkey.currentState!.validate()) {
                             _login();
@@ -421,8 +424,9 @@ class _LoginFormState extends State<LoginForm> {
         fulname: userdata['fulname'],
         email: userdata['email'],
         companyid: userdata['companyid'],
-        password: userdata['password'],
+        password: userdata['password'], 
       );
+      //  userProvider.login(user);
        Provider.of<UserProvider>(context, listen: false).login(user);
         showDialog(
              context: context,
@@ -433,7 +437,7 @@ class _LoginFormState extends State<LoginForm> {
            );
          },
       );
-      print(responseData);
+      // print(responseData);
         // Navigate to the dashboard or home screen
       } else {
         // Show error message
@@ -448,7 +452,7 @@ class _LoginFormState extends State<LoginForm> {
               Text( '${responseData['message']}'),
             ],
           ),
-          backgroundColor: Colors.deepOrange,
+          backgroundColor: Color.fromARGB(255, 0, 66, 121),
           duration: Duration(seconds: 5),
         ),
       );

@@ -15,7 +15,7 @@ class SignupForm extends StatefulWidget {
 
 class _SignupFormState extends State<SignupForm> {
   final _formkey = GlobalKey<FormState>();
-  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();  
   final TextEditingController _idNoController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -35,7 +35,7 @@ class _SignupFormState extends State<SignupForm> {
       return DesktopLayout();
     } else {
       return Scaffold(
-        backgroundColor: Colors.deepOrange,
+         backgroundColor: Color.fromARGB(255, 0, 66, 121),
         body: ListView(scrollDirection: Axis.vertical, children: <Widget>[
           const SizedBox(
             height: 40,
@@ -83,7 +83,7 @@ class _SignupFormState extends State<SignupForm> {
                     child: Container(
                       height: 50,
                       decoration: const BoxDecoration(
-                          color: Colors.deepOrange,
+                          color: Color.fromARGB(255, 0, 66, 121),
                           borderRadius: BorderRadius.all(Radius.circular(50))),
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -144,7 +144,7 @@ class _SignupFormState extends State<SignupForm> {
           ),
           Container(
             decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color.fromARGB(251, 234, 238, 255),
                 borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25),
                     topRight: Radius.circular(25))),
@@ -204,7 +204,7 @@ class _SignupFormState extends State<SignupForm> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 width: 3,
-                                color: Colors.deepOrange,
+                                color: Color.fromARGB(255, 0, 66, 121),
                                 style: BorderStyle.solid,
                               ),
                               borderRadius: BorderRadius.all(
@@ -261,7 +261,7 @@ class _SignupFormState extends State<SignupForm> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 width: 3,
-                                color: Colors.deepOrange,
+                                color: Color.fromARGB(255, 0, 66, 121),
                                 style: BorderStyle.solid,
                               ),
                               borderRadius: BorderRadius.all(
@@ -320,7 +320,7 @@ class _SignupFormState extends State<SignupForm> {
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 width: 3,
-                                color: Colors.deepOrange,
+                                color: Color.fromARGB(255, 0, 66, 121),
                                 style: BorderStyle.solid,
                               ),
                               borderRadius: BorderRadius.all(
@@ -375,7 +375,7 @@ class _SignupFormState extends State<SignupForm> {
                               focusedBorder: const OutlineInputBorder(
                                 borderSide: BorderSide(
                                   width: 3,
-                                  color: Colors.deepOrange,
+                                  color: Color.fromARGB(255, 0, 66, 121),
                                   style: BorderStyle.solid,
                                 ),
                                 borderRadius: BorderRadius.all(
@@ -431,10 +431,10 @@ class _SignupFormState extends State<SignupForm> {
                                 Transform.scale(
                                   scale: 1.4,
                                   child: Checkbox(
-                                      activeColor: Colors.deepOrange,
+                                      activeColor: Color.fromARGB(255, 0, 66, 121),
                                       side: const BorderSide(
                                           width: 1.7,
-                                          color: Colors.deepOrange,
+                                          color: Color.fromARGB(255, 0, 66, 121),
                                           style: BorderStyle.solid),
                                       value: _isChecked,
                                       onChanged: (newValue) {
@@ -471,7 +471,8 @@ class _SignupFormState extends State<SignupForm> {
                         child: ElevatedButton(
                           style: const ButtonStyle(
                               backgroundColor:
-                                  MaterialStatePropertyAll(Colors.deepOrange)),
+                                  MaterialStatePropertyAll(
+                                  Color.fromARGB(255, 0, 66, 121))),
                           onPressed: () {
                             if (_formkey.currentState!.validate()) {
                               _registered();
